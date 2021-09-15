@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>let vs const real world scenario</title>
+</head>
+<body>
+<script>
+// Stop leaking var varibale to global scope
+(function(){
+    var name = "saif";
+    console.log(name, "Local scope using iife");
+})()
+
+name = "saifdev";
+
+console.log(name,"It's blank due to native initalization of name varibale but value not updated");
+
+
+//For loop
+
+for(var i = 0 ;i < 10; i++){
+    //console.log(i);
+    setTimeout(function(){
+     console.log('The number is ',i)
+    },1000);
+}
+// output: The number is  10; here i gets delivered from global scope
+
+for(let i = 0 ;i < 10; i++){
+    //console.log(i);
+    setTimeout(function(){
+     console.log('The number is ',i)
+    },1000);
+}
+
+/* 
+output:
+
+The number is  0
+The number is  1
+The number is  2
+The number is  3
+The number is  4
+The number is  5
+The number is  6
+The number is  7
+The number is  8
+The number is  9 
+
+note: here i is blocked scoped to loop block
+*/
+
+</script>
+</body>
+</html>
