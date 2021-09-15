@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>let vs const vs var</title>
+</head>
+<body>
+<script>
+
+const speech = "abcd";
+console.log(speech,"const variable are unchangeable");
+
+
+let isOk = false;
+
+if(speech == 'abcd'){
+    let isOk = true;
+    console.log(isOk,"Since let avriable are block scoped it can be redeclared in deifferent block\n");
+    console.log("local scoped isOk variable");
+
+}
+console.log(isOk,"global scoped isOk variable");
+
+let speaker = "Benzema";
+speaker = "Neymar";
+console.log(speaker,"let variable gets reassigned");
+
+console.log("let variable can't be redeclared in same scope");
+//let speaker = "Mbappe";
+
+
+//const variable object property change 
+const car = {
+    brand: "BMW",
+    model: "007"
+};
+
+
+console.log(car,"Before const object property update")
+
+car.brand = "Marcedez Benz";
+
+console.log(car, "const variable object property can be updated");
+
+
+// Create a unchangeable const object
+
+const unchangeableConstObj = Object.freeze(car);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

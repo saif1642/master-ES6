@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>let vs const vs var</title>
+</head>
+<body>
+<script>
+
+
+var height = 100;
+console.log(height, "Initial height variable");
+height = 500;
+console.log(height, "Height gets reassigned with new value");
+var height = 150;
+console.log(height, "Height gets redefined without error in same scope");
+
+
+//An example of variable leaking to global scope
+if(height > 50){
+  var price = height * 10;
+  console.log(`House price is ${price}`);
+}
+console.log(price, "[price] variable gets leaked to global scope because it's only function scoped");
+
+
+//let variables
+
+if(height > 50){
+  let newprice = height * 10;
+  console.log(`House price is ${newprice}`);
+}
+console.log("If we console newPrice outside of this block, It will throw an error because let variables are block scoped! So, what's a block?");
+console.log("Every time we see curly bracket start and end that's a block scope");
+console.log(newprice);
+
+
+</script>
+</body>
+</html>
