@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Template Strings Tagging</title>
+    <style>
+        .h1 {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function highlight(strings, ...values) {
+            let str = "";
+            strings.forEach((string, i) => {
+                str += `${string} <span class="h1">${values[i] || ''}</span>`
+            })
+            return str;
+        }
+
+        const name = "Bullet";
+        const age = 7;
+
+        const sentence = highlight `I have a dog named ${name} and he is ${age} years old`;
+
+        document.body.innerHTML = sentence;
+    </script>
+</body>
+
+</html>

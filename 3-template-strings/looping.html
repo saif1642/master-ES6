@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template Strings</title>
+</head>
+<body>
+<script>
+  const persons = [
+    {name: 'SaifDev',city: 'Dhaka',job:'Developer'},
+    {name: 'AssDev',city: 'Dhaka'},
+    {name: 'FootDev',city: 'Dhaka'}
+  ];
+
+  const html = `
+    <ul class="dogs">
+        ${persons.map(person => `<li>${person.name} lives in ${person.city} ${person.job ? `and works as a ${person.job}` : ''}</li>`).join("")}
+    </ul>`;
+
+    document.body.innerHTML = html;
+
+  
+
+</script>
+</body>
+</html>

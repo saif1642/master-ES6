@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template Strings</title>
+</head>
+<body>
+<script>
+  const person = {
+    name: 'SaifDev',
+    job: 'Software Developer',
+    city: 'Dhaka',
+    keywords:['Dhaka','Developer','Tech','Software']
+  };
+
+  function renderKeywords(keys){
+      return `
+      <ol>
+          ${keys.map(key => `<li>${key}</li>`).join('')}
+      </ol>`
+  }
+
+  const html = `
+    <div class="person">
+      <h2>
+        ${person.name}
+        <span class="job">${person.job}</span>
+      </h2>
+      <p class="location">${person.city}</p>
+      <p class="bio">${person.bio}</p>
+      ${renderKeywords(person.keywords)}
+    </div>
+  `;
+
+  document.body.innerHTML = html;
+
+</script>
+</body>
+</html>
