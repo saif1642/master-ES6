@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6 String Methods</title>
+</head>
+<body>
+
+<script>
+
+
+// .startsWith()
+var str = "Hello world, welcome to the universe.";
+str.startsWith("Hello")   // Returns true
+
+
+// .endsWith()
+
+ str = "Hello world";
+str.endsWith("world")   // Returns true
+str.endsWith("World")   // Returns false
+
+//.endsWith take another parameter length
+ str = "Hello world, welcome to the universe.";
+str.endsWith("world", 11)   // Returns true
+
+// .includes()
+ str = "Hello world, welcome to the universe.";
+str.includes("world")   // Returns true
+
+// .repeat()
+//Make a new string by copying a string twice:
+
+ str = "Hello world!";
+str.repeat(2);
+
+
+
+
+//Usages of .repeat()
+function leftPad(str, length = 20) {
+  return `→ ${' '.repeat(length - str.length)}${str}`;
+}
+
+const make = 'BMW';
+const model = 'x5';
+const colour = 'Royal Blue';
+
+console.log(leftPad(make));
+console.log(leftPad(model));
+console.log(leftPad(colour));
+
+
+</script>
+
+</body>
+</html>
