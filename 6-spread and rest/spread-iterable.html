@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Iterables</title>
+</head>
+
+<body>
+
+    <div class="people">
+        <p>Rahim</p>
+        <p>Jhon</p>
+        <p>Ram</p>
+    </div>
+
+
+    <script>
+        //From iterable to array
+
+        //Way one
+        const peoples = [...document.querySelectorAll('.people p')];
+
+        //Way Two
+        //const peoples = Array.from(document.querySelectorAll('.people p'));
+
+        const names = peoples.map((people) => people.textContent);
+
+        console.log(names);
+
+        const comments = [{
+            id: 1355685,
+            comment: 'This is good!'
+        }, {
+            id: 1355475685,
+            comment: 'Another good one!'
+        }, {
+            id: 564498746,
+            comment: 'This is dissapointing'
+        }];
+        const id = 1355475685;
+        const commentIndex = comments.findIndex(comment => comment.id == id);
+        const newComments = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex + 1)];
+        console.log(newComments);
+    </script>
+</body>
+
+</html>

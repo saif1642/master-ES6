@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Function</title>
+</head>
+
+<body>
+    <script>
+        const inventors = ['Newton', 'Einstine', 'Galelio'];
+        const newInventors = ['Musk', 'Wozniak'];
+
+        //push new inventors with old ones
+        // inventors.push(newInventors); //it's creating array of array
+        //inventors.push.apply(inventors, newInventors);
+        inventors.push(...newInventors);
+        console.log(inventors);
+
+        const names = ['Saif', 'Dev'];
+
+        function sayHi(first, last) {
+            alert(`Hello ${first} ${last}`);
+        }
+
+        //sayHi(names[0], names[1]);
+
+        //Callling with spread
+        sayHi(...names);
+    </script>
+</body>
+
+</html>
